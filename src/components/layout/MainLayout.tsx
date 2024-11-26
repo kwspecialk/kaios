@@ -1,7 +1,7 @@
 import React from 'react';
-import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { useTheme } from '@/hooks/useTheme';
+import { Sidebar } from './Sidebar';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { theme } = useTheme();
@@ -12,7 +12,7 @@ export const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }
         <Sidebar />
         <div className="flex-1 flex flex-col overflow-hidden">
           <Header />
-          <main className="flex-1 overflow-y-auto bg-background px-4 sm:px-6 lg:px-8">
+          <main className="flex-1 overflow-y-auto bg-background p-4">
             {children}
           </main>
         </div>

@@ -1,6 +1,6 @@
-// src/components/layout/Header.tsx
-//import React from 'react';
+import React from 'react';
 import { Bell, User } from 'lucide-react';
+import { ThemeToggle } from '../ui/ThemeToggle';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,12 +13,14 @@ export const Header = () => {
     <header className="border-b bg-card">
       <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
-          <h2 className="text-xl font-semibold">KaiOS</h2>
+          <h2 className="text-xl font-semibold text-foreground">KaiOS</h2>
         </div>
         
         <div className="flex items-center gap-4">
+          <ThemeToggle />
+          
           <button className="relative">
-            <Bell className="h-5 w-5" />
+            <Bell className="h-5 w-5 text-foreground" />
             <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-xs text-white flex items-center justify-center">
               3
             </span>
@@ -26,8 +28,8 @@ export const Header = () => {
           
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center">
-              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                <User className="h-4 w-4" />
+              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
+                <User className="h-4 w-4 text-foreground" />
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

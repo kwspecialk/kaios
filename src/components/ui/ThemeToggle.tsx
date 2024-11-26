@@ -1,7 +1,6 @@
-//import React from 'react';
-import { useTheme } from '@/hooks/useTheme';
+import React from 'react';
 import { Moon, Sun } from 'lucide-react';
-//import { useTheme } from '@/hooks/useTheme';
+import { useTheme } from '@/contexts/ThemeContext';
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -9,7 +8,7 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-lg hover:bg-accent"
+      className="p-2 rounded-lg hover:bg-accent text-foreground"
     >
       {theme === 'dark' ? (
         <Moon className="h-5 w-5" />
